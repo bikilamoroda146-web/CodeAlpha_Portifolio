@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="red">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bikila Moroda | Full-Stack Web Developer</title>
+  <meta name="description" content="Bikila Moroda — Aspiring Full-Stack Web Developer & CS Student. Building modern, responsive web applications with React, Node.js, and more.">
+  <meta name="keywords" content="Bikila Moroda, Web Developer, Full-Stack, React, JavaScript, Portfolio">
+  <meta property="og:title" content="Bikila Moroda | Full-Stack Web Developer">
+  <meta property="og:description" content="Building modern, responsive, and user-friendly web applications.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#ef4444">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23ef4444'/%3E%3Ctext x='50' y='68' font-family='Arial,sans-serif' font-size='52' font-weight='700' fill='white' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">BM<span>.</span></div>
+    <div class="loader-bar-track"><div class="loader-bar-fill" id="loader-fill"></div></div>
+    <div class="loader-text" id="loader-text">Loading...</div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Bikila<span>.</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#timeline" class="nav-link">Journey</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn" id="cmd-btn" title="Command Palette (Ctrl+K)" aria-label="Open command palette"><i class="fas fa-search"></i></button>
+        <button class="nav-btn" id="theme-toggle" title="Toggle theme" aria-label="Toggle dark/light theme"><i class="fas fa-moon"></i></button>
+        <button class="nav-btn" id="theme-panel-btn" title="Customize theme" aria-label="Open theme panel"><i class="fas fa-palette"></i></button>
+        <a href="#contact" class="nav-cta">Hire Me</a>
+        <div class="hamburger" id="hamburger" role="button" aria-label="Toggle menu" tabindex="0">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#timeline" class="mobile-link">Journey</a>
+    <a href="#testimonials" class="mobile-link">Testimonials</a>
+    <a href="#certifications" class="mobile-link">Certifications</a>
+    <a href="#blog" class="mobile-link">Blog</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- THEME PANEL -->
+  <div id="theme-panel">
+    <div class="theme-panel-inner glass">
+      <div class="theme-panel-title">
+        <span>Customize</span>
+        <button class="theme-close" id="theme-panel-close" aria-label="Close theme panel"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="theme-option">
+        <label>Theme Mode</label>
+        <div class="theme-modes">
+          <button class="theme-mode-btn active" data-theme-set="dark"><i class="fas fa-moon"></i>Dark</button>
+          <button class="theme-mode-btn" data-theme-set="light"><i class="fas fa-sun"></i>Light</button>
+        </div>
+      </div>
+      <div class="theme-option">
+        <label>Accent Color</label>
+        <div class="accent-colors">
+          <button class="accent-btn active" data-color="red" style="background:#ef4444" aria-label="Red accent"></button>
+          <button class="accent-btn" data-color="blue" style="background:#3b82f6" aria-label="Blue accent"></button>
+          <button class="accent-btn" data-color="green" style="background:#22c55e" aria-label="Green accent"></button>
+          <button class="accent-btn" data-color="purple" style="background:#a855f7" aria-label="Purple accent"></button>
+          <button class="accent-btn" data-color="orange" style="background:#f97316" aria-label="Orange accent"></button>
+          <button class="accent-btn" data-color="cyan" style="background:#06b6d4" aria-label="Cyan accent"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero-gradient hero-gradient-1"></div>
+      <div class="hero-gradient hero-gradient-2"></div>
+      <div class="parallax-shapes">
+        <div class="p-shape p-shape-1"></div>
+        <div class="p-shape p-shape-2"></div>
+        <div class="p-shape p-shape-3"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div>
+            <div class="hero-badge reveal"><span class="pulse"></span> Available for opportunities</div>
+            <h1 class="hero-name reveal" style="transition-delay:0.1s">Hi, I'm<br><span>Bikila Moroda</span></h1>
+            <div class="hero-typing reveal" style="transition-delay:0.2s"><span id="typed-text"></span><span class="typed-cursor">|</span></div>
+            <p class="hero-desc reveal" style="transition-delay:0.3s">A passionate Computer Science student building modern, responsive, and user-friendly web applications with clean code and exceptional user experience.</p>
+            <div class="hero-buttons reveal" style="transition-delay:0.4s">
+              <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
+              <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Get in Touch</a>
+              <a href="#about" class="btn btn-ghost"><i class="fas fa-user"></i> About Me</a>
+            </div>
+            <div class="hero-stats reveal" style="transition-delay:0.5s">
+              <div><span class="hero-stat-num" data-count="10">0</span><span class="hero-stat-label">Projects</span></div>
+              <div><span class="hero-stat-num" data-count="12">0</span><span class="hero-stat-label">Technologies</span></div>
+              <div><span class="hero-stat-num" data-count="800">0</span><span class="hero-stat-label">Hours Coding</span></div>
+            </div>
+          </div>
+          <div class="hero-visual reveal-right">
+            <div class="hero-avatar-wrap">
+              <div class="hero-avatar">
+                <img src="../images/tech.jpg" alt="Bikila Moroda" loading="eager">
+              </div>
+              <div class="hero-ring"></div>
+              <div class="hero-float hero-float-1 glass"><i class="fab fa-react"></i> React.js</div>
+              <div class="hero-float hero-float-2 glass"><i class="fab fa-node-js"></i> Node.js</div>
+              <div class="hero-float hero-float-3 glass"><i class="fab fa-js-square"></i> JavaScript</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-label reveal">About Me</div>
+        <div class="section-title reveal">Passionate about building<br>the web of tomorrow</div>
+        <div class="about-grid">
+          <div class="about-image reveal-left">
+            <img src="../image/Screenshot_20260117-060545.jpg " alt="Bikila working" loading="lazy">
+            <div class="about-image-overlay"></div>
+            <div class="about-experience-badge glass">
+              <div class="num">2+</div>
+              <div class="label">Years Learning</div>
+            </div>
+          </div>
+          <div class="about-text reveal-right">
+            <p>I'm a passionate and motivated <strong>Computer Science student</strong> with a strong interest in modern web development and software engineering. I specialize in frontend development using <strong>HTML, CSS, JavaScript, and React.js</strong>, focusing on building responsive, interactive, and visually appealing user interfaces.</p>
+            <p>I also have foundational backend knowledge in <strong>Node.js, Express.js, MongoDB, and RESTful APIs</strong>. I enjoy solving real-world problems, learning modern technologies, and building practical projects that improve my technical and problem-solving skills.</p>
+            <p>My goal is to become a highly skilled <strong>Full-Stack Web Developer</strong> and build impactful digital products that create real value for users and businesses.</p>
+            <a href="#" class="btn btn-primary" style="margin-top:8px"><i class="fas fa-download"></i> Download CV</a>
+          </div>
+        </div>
+        <div class="about-counters reveal" style="transition-delay:0.2s">
+          <div class="about-counter">
+            <span class="num" data-count="10">0</span>
+            <span class="label">Projects Done</span>
+          </div>
+          <div class="about-counter">
+            <span class="num" data-count="12">0</span>
+            <span class="label">Technologies</span>
+          </div>
+          <div class="about-counter">
+            <span class="num" data-count="800">0</span>
+            <span class="label">Hours of Code</span>
+          </div>
+          <div class="about-counter">
+            <span class="num" data-count="5">0</span>
+            <span class="label">Certificates</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-label reveal">My Skills</div>
+        <div class="section-title reveal">Technologies & tools<br>I work with</div>
+        <p class="section-desc reveal">Continuously expanding my skill set to stay current with modern web development trends and best practices.</p>
+        <div class="skills-tabs reveal" style="transition-delay:0.1s">
+          <button class="skill-tab active" data-tab="all">All Skills</button>
+          <button class="skill-tab" data-tab="frontend">Frontend</button>
+          <button class="skill-tab" data-tab="backend">Backend</button>
+          <button class="skill-tab" data-tab="tools">Tools</button>
+          <button class="skill-tab" data-tab="soft">Soft Skills</button>
+        </div>
+        <div class="skills-grid" id="skills-grid"></div>
+        <div class="skills-circle-row reveal" style="transition-delay:0.2s">
+          <div class="skill-circle" data-pct="90">
+            <svg width="100" height="100"><circle class="skill-circle-bg" cx="50" cy="50" r="42"/><circle class="skill-circle-fill" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264"/></svg>
+            <div class="skill-circle-text"><span class="num">90%</span><span class="label">HTML/CSS</span></div>
+          </div>
+          <div class="skill-circle" data-pct="85">
+            <svg width="100" height="100"><circle class="skill-circle-bg" cx="50" cy="50" r="42"/><circle class="skill-circle-fill" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264"/></svg>
+            <div class="skill-circle-text"><span class="num">85%</span><span class="label">JavaScript</span></div>
+          </div>
+          <div class="skill-circle" data-pct="80">
+            <svg width="100" height="100"><circle class="skill-circle-bg" cx="50" cy="50" r="42"/><circle class="skill-circle-fill" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264"/></svg>
+            <div class="skill-circle-text"><span class="num">80%</span><span class="label">React.js</span></div>
+          </div>
+          <div class="skill-circle" data-pct="60">
+            <svg width="100" height="100"><circle class="skill-circle-bg" cx="50" cy="50" r="42"/><circle class="skill-circle-fill" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264"/></svg>
+            <div class="skill-circle-text"><span class="num">60%</span><span class="label">Node.js</span></div>
+          </div>
+          <div class="skill-circle" data-pct="55">
+            <svg width="100" height="100"><circle class="skill-circle-bg" cx="50" cy="50" r="42"/><circle class="skill-circle-fill" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264"/></svg>
+            <div class="skill-circle-text"><span class="num">55%</span><span class="label">MongoDB</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-label reveal">My Work</div>
+        <div class="section-title reveal">Featured projects<br>I've built</div>
+        <p class="section-desc reveal">Each project represents my journey of learning and building. Click to explore the details.</p>
+        <div class="projects-toolbar reveal" style="transition-delay:0.1s">
+          <div class="project-filters">
+            <button class="project-filter active" data-filter="all">All</button>
+            <button class="project-filter" data-filter="frontend">Frontend</button>
+            <button class="project-filter" data-filter="fullstack">Full Stack</button>
+            <button class="project-filter" data-filter="tool">Tools</button>
+          </div>
+          <div class="search-wrap">
+            <i class="fas fa-search"></i>
+            <input type="text" class="project-search" id="project-search" placeholder="Search projects..." aria-label="Search projects">
+          </div>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+        <div style="text-align:center;margin-top:48px" class="reveal">
+          <div class="card project-more visible" style="display:inline-flex;align-items:center;gap:16px;padding:40px 60px;border-style:dashed">
+            <div style="text-align:left">
+              <h3 style="font-size:18px;font-weight:600;margin-bottom:4px">More Projects Coming Soon</h3>
+              <p style="font-size:13px;color:var(--text-muted)">I'm constantly building and learning. Stay tuned for more exciting projects!</p>
+            </div>
+            <i class="fas fa-code" style="font-size:32px;color:var(--accent);opacity:0.3"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-label reveal">What I Offer</div>
+        <div class="section-title reveal">Services I can<br>provide for you</div>
+        <p class="section-desc reveal">Leveraging my skills to help bring your ideas to life with clean, efficient, and beautiful code.</p>
+        <div class="services-grid">
+          <div class="service-card reveal" style="transition-delay:0.05s">
+            <div class="service-icon"><i class="fas fa-code"></i></div>
+            <h3>Frontend Development</h3>
+            <p>Building pixel-perfect, responsive, and interactive user interfaces using modern technologies.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Semantic HTML5 markup</li>
+              <li><i class="fas fa-check"></i> Modern CSS3 with animations</li>
+              <li><i class="fas fa-check"></i> Cross-browser compatibility</li>
+            </ul>
+          </div>
+          <div class="service-card reveal" style="transition-delay:0.1s">
+            <div class="service-icon"><i class="fab fa-react"></i></div>
+            <h3>React Development</h3>
+            <p>Creating dynamic single-page applications with React.js following best practices and patterns.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Component-based architecture</li>
+              <li><i class="fas fa-check"></i> State management solutions</li>
+              <li><i class="fas fa-check"></i> Performance optimization</li>
+            </ul>
+          </div>
+          <div class="service-card reveal" style="transition-delay:0.15s">
+            <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3>Responsive Design</h3>
+            <p>Ensuring your website looks and works flawlessly on every device and screen size.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Mobile-first approach</li>
+              <li><i class="fas fa-check"></i> Fluid layouts & flexbox/grid</li>
+              <li><i class="fas fa-check"></i> Touch-friendly interactions</li>
+            </ul>
+          </div>
+          <div class="service-card reveal" style="transition-delay:0.2s">
+            <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+            <h3>UI/UX Implementation</h3>
+            <p>Translating design mockups into functional, accessible, and beautiful web interfaces.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Design-to-code translation</li>
+              <li><i class="fas fa-check"></i> Accessibility (a11y) standards</li>
+              <li><i class="fas fa-check"></i> Micro-interactions & animations</li>
+            </ul>
+          </div>
+          <div class="service-card reveal" style="transition-delay:0.25s">
+            <div class="service-icon"><i class="fas fa-server"></i></div>
+            <h3>Basic Full-Stack Solutions</h3>
+            <p>Building simple full-stack applications with Node.js backend and database integration.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> RESTful API development</li>
+              <li><i class="fas fa-check"></i> MongoDB database design</li>
+              <li><i class="fas fa-check"></i> Authentication & authorization</li>
+            </ul>
+          </div>
+          <div class="service-card reveal" style="transition-delay:0.3s">
+            <div class="service-icon"><i class="fas fa-bolt"></i></div>
+            <h3>Performance Optimization</h3>
+            <p>Analyzing and improving website speed, accessibility, and overall user experience.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Lighthouse audits & fixes</li>
+              <li><i class="fas fa-check"></i> Lazy loading & code splitting</li>
+              <li><i class="fas fa-check"></i> Image & asset optimization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="section">
+      <div class="container">
+        <div class="section-label reveal">My Journey</div>
+        <div class="section-title reveal">The path that shaped<br>my development skills</div>
+        <p class="section-desc reveal">A timeline of my learning journey, from writing my first line of code to building full-stack applications.</p>
+        <div class="timeline">
+          <div class="timeline-item reveal" style="transition-delay:0.05s">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2022 — The Beginning</div>
+            <div class="timeline-card"><i class="fas fa-flag timeline-icon"></i><h3>Started Programming Journey</h3><p>Began my Computer Science studies and wrote my very first "Hello, World!" program. The spark was ignited.</p></div>
+          </div>
+          <div class="timeline-item reveal" style="transition-delay:0.1s">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2022 — Foundation</div>
+            <div class="timeline-card"><i class="fab fa-html5 timeline-icon"></i><h3>Mastered HTML & CSS</h3><p>Learned semantic HTML5, modern CSS3, Flexbox, Grid, and responsive design principles. Built my first static websites.</p></div>
+          </div>
+          <div class="timeline-item reveal" style="transition-delay:0.15s">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2023 — Level Up</div>
+            <div class="timeline-card"><i class="fab fa-js-square timeline-icon"></i><h3>Dove into JavaScript</h3><p>Mastered ES6+ concepts, DOM manipulation, async programming, and built interactive web applications from scratch.</p></div>
+          </div>
+          <div class="timeline-item reveal" style="transition-delay:0.2s">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2023 — Framework Era</div>
+            <div class="timeline-card"><i class="fab fa-react timeline-icon"></i><h3>Embraced React.js</h3><p>Learned React components, hooks, state management, and built multiple projects including the Image Gallery and Music Player.</p></div>
+          </div>
+          <div class="timeline-item reveal" style="transition-delay:0.25s">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2024 — Backend</div>
+            <div class="timeline-card"><i class="fab fa-node-js timeline-icon"></i><h3>Explored Backend Development</h3><p>Started learning Node.js, Express.js, MongoDB, and RESTful APIs. Began understanding full-stack architecture.</p></div>
+          </div>
+          <div class="timeline-item reveal" style="transition-delay:0.3s">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2024 — Full-Stack Path</div>
+            <div class="timeline-card"><i class="fas fa-layer-group timeline-icon"></i><h3>Full-Stack Journey Begins</h3><p>Connecting frontend and backend, learning Git/GitHub workflows, clean code practices, and working toward becoming a complete developer.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <div class="section-label reveal">Testimonials</div>
+        <div class="section-title reveal">What people say<br>about my work</div>
+        <div class="testimonials-slider reveal" style="transition-delay:0.1s">
+          <div class="testimonials-track" id="testimonials-track">
+            <div class="testimonial-card">
+              <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="testimonial-text">"Bikila has an incredible eye for detail. The responsive gallery he built was not only functional but visually stunning. His dedication to clean code is impressive for a student at his level."</p>
+              <div class="testimonial-author">
+                <img src="https://picsum.photos/seed/test-person1/96/96.jpg" alt="Testimonial" class="testimonial-avatar" loading="lazy">
+                <div class="testimonial-author-info"><h4>Abebe Tadesse</h4><span>Senior Developer, TechHub</span></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+              <p class="testimonial-text">"Working with Bikila on a group project was a great experience. He's a strong communicator, always willing to learn, and his React skills are solid. I see him going far in web development."</p>
+              <div class="testimonial-author">
+                <img src="https://picsum.photos/seed/test-person2/96/96.jpg" alt="Testimonial" class="testimonial-avatar" loading="lazy">
+                <div class="testimonial-author-info"><h4>Sara Kebede</h4><span>CS Student, Team Lead</span></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="testimonial-text">"The music player app Bikila built shows real understanding of JavaScript and user experience. The attention to UI details, smooth animations, and clean architecture really stood out."</p>
+              <div class="testimonial-author">
+                <img src="https://picsum.photos/seed/test-person3/96/96.jpg" alt="Testimonial" class="testimonial-avatar" loading="lazy">
+                <div class="testimonial-author-info"><h4>Daniel Haile</h4><span>UI/UX Designer</span></div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+              <p class="testimonial-text">"Bikila's portfolio itself is a testament to his skills. The design, interactions, and code quality are exceptional. He has a bright future ahead in full-stack development."</p>
+              <div class="testimonial-author">
+                <img src="https://picsum.photos/seed/test-person4/96/96.jpg" alt="Testimonial" class="testimonial-avatar" loading="lazy">
+                <div class="testimonial-author-info"><h4>Meron Alemu</h4><span>Freelance Developer</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonials-nav">
+            <button id="test-prev" aria-label="Previous testimonial"><i class="fas fa-arrow-left"></i></button>
+            <button id="test-next" aria-label="Next testimonial"><i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="testimonials-dots" id="test-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <div class="section-label reveal">Achievements</div>
+        <div class="section-title reveal">Certifications &<br>learning milestones</div>
+        <div class="certs-grid">
+          <div class="cert-card reveal" style="transition-delay:0.05s">
+            <div class="cert-icon"><i class="fab fa-html5"></i></div>
+            <div class="cert-info"><h4>HTML5 Certificate</h4><p>Responsive Web Design</p><span class="cert-date">2022</span></div>
+          </div>
+          <div class="cert-card reveal" style="transition-delay:0.1s">
+            <div class="cert-icon"><i class="fab fa-css3-alt"></i></div>
+            <div class="cert-info"><h4>CSS3 Certificate</h4><p>Advanced Styling & Layouts</p><span class="cert-date">2022</span></div>
+          </div>
+          <div class="cert-card reveal" style="transition-delay:0.15s">
+            <div class="cert-icon"><i class="fab fa-js-square"></i></div>
+            <div class="cert-info"><h4>JavaScript Certificate</h4><p>ES6+ & DOM Manipulation</p><span class="cert-date">2023</span></div>
+          </div>
+          <div class="cert-card reveal" style="transition-delay:0.2s">
+            <div class="cert-icon"><i class="fab fa-react"></i></div>
+            <div class="cert-info"><h4>React.js Certificate</h4><p>Component Development</p><span class="cert-date">2023</span></div>
+          </div>
+          <div class="cert-card reveal" style="transition-delay:0.25s">
+            <div class="cert-icon"><i class="fab fa-git-alt"></i></div>
+            <div class="cert-info"><h4>Git & GitHub Certificate</h4><p>Version Control & Collaboration</p><span class="cert-date">2023</span></div>
+          </div>
+          <div class="cert-card reveal" style="transition-delay:0.3s">
+            <div class="cert-icon"><i class="fas fa-trophy"></i></div>
+            <div class="cert-info"><h4>Hackathon Participant</h4><p>University Coding Competition</p><span class="cert-date">2024</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="section">
+      <div class="container">
+        <div class="section-label reveal">Blog</div>
+        <div class="section-title reveal">Thoughts & articles<br>on web development</div>
+        <div class="blog-grid">
+          <div class="blog-card reveal" style="transition-delay:0.05s">
+            <div class="blog-card-img"><img src="https://picsum.photos/seed/blog-react-tips/640/360.jpg" alt="Blog post" loading="lazy"></div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta"><span class="tag">React</span><span><i class="far fa-calendar"></i> Dec 2024</span><span><i class="far fa-clock"></i> 5 min</span></div>
+              <h3>10 React Hooks Tips Every Beginner Should Know</h3>
+              <p>Practical tips for mastering React hooks including useState, useEffect, and custom hooks for cleaner code.</p>
+              <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="blog-card reveal" style="transition-delay:0.1s">
+            <div class="blog-card-img"><img src="https://picsum.photos/seed/blog-css-grid/640/360.jpg" alt="Blog post" loading="lazy"></div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta"><span class="tag">CSS</span><span><i class="far fa-calendar"></i> Nov 2024</span><span><i class="far fa-clock"></i> 4 min</span></div>
+              <h3>Mastering CSS Grid: From Basics to Advanced Layouts</h3>
+              <p>A comprehensive guide to CSS Grid with real-world examples for building complex responsive layouts.</p>
+              <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="blog-card reveal" style="transition-delay:0.15s">
+            <div class="blog-card-img"><img src="https://picsum.photos/seed/blog-learning-journey/640/360.jpg" alt="Blog post" loading="lazy"></div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta"><span class="tag">Career</span><span><i class="far fa-calendar"></i> Oct 2024</span><span><i class="far fa-clock"></i> 6 min</span></div>
+              <h3>My Journey from Zero to Web Developer: Lessons Learned</h3>
+              <p>Reflecting on my coding journey, the challenges I faced, and the strategies that helped me grow as a developer.</p>
+              <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-label reveal">Get in Touch</div>
+        <div class="section-title reveal">Let's work together<br>on your next project</div>
+        <p class="section-desc reveal">Have a project in mind or just want to connect? I'd love to hear from you. Let's create something amazing together.</p>
+        <div class="contact-grid">
+          <div class="contact-info reveal-left">
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+              <div><h4>Email</h4><p><a href="bikilamoroda146@email.com">bikilamoroda146@gmail.com</a></p></div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div><h4>Location</h4><p> Jimma, Oromia, Ethiopia</p></div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+              <div><h4>Phone</h4><p><a href="tel:+251912345678">+251 928214042</a></p></div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
+              <div><h4>Availability</h4><p>Open to internships, freelance & collaboration</p></div>
+            </div>
+            <div class="contact-socials">
+              <a href="https://github.com/bikilamoroda146-web" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://linkedin.com/in/bikilamoroda" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://twitter.com/bikilamoroda" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://t.me/bimooo111" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+          </div>
+          <form class="contact-form reveal-right" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                <div class="error-msg">Please enter your name</div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                <div class="error-msg">Please enter a valid email</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+              <div class="error-msg">Please enter a subject</div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+              <div class="error-msg">Please enter your message</div>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-copy">&copy; 2024 Bikila Moroda. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-made">Designed & Built with <i class="fas fa-heart" style="color:var(--accent)"></i> by Bikila Moroda</div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- COMMAND PALETTE -->
+  <div id="cmd-palette" role="dialog" aria-label="Command palette">
+    <div class="cmd-box">
+      <div class="cmd-input-wrap">
+        <i class="fas fa-search"></i>
+        <input type="text" id="cmd-input" placeholder="Type a command or search..." autocomplete="off">
+        <kbd>ESC</kbd>
+      </div>
+      <div class="cmd-results" id="cmd-results"></div>
+    </div>
+  </div>
+
+  <!-- PROJECT MODAL -->
+  <div id="project-modal" role="dialog" aria-label="Project details">
+    <div class="modal-box" style="position:relative">
+      <button class="modal-close" id="modal-close" aria-label="Close modal"><i class="fas fa-times"></i></button>
+      <img class="modal-img" id="modal-img" src="" alt="">
+      <div class="modal-body">
+        <h2 id="modal-title"></h2>
+        <p class="modal-desc" id="modal-desc"></p>
+        <div class="modal-tech" id="modal-tech"></div>
+        <div class="modal-features" id="modal-features">
+          <h4>Key Features</h4>
+          <ul></ul>
+        </div>
+        <div class="modal-challenges" id="modal-challenges">
+          <h4>Challenges & Solutions</h4>
+          <p></p>
+        </div>
+        <div class="modal-actions" id="modal-actions"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EASTER EGG -->
+  <div id="easter-egg">
+    <div class="easter-text">&#127881; You found it!</div>
+    <div class="easter-sub">You're a true explorer. Thanks for checking out every detail!</div>
+    <button class="btn btn-outline" onclick="document.getElementById('easter-egg').classList.remove('active')" style="margin-top:16px"><i class="fas fa-times"></i> Close</button>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+emailjs.init({
+    publicKey: "QWbMyj7RDkKsp9vPB"
+});
+</script>
+
+<script src="script.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
