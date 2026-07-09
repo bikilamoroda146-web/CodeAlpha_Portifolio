@@ -83,7 +83,7 @@ const PROJECTS_DATA = [
       'Custom cursor & loading screen'
     ],
     challenges: 'Building a complex single-file application with theme switching, particle systems, scroll animations, and a command palette \u2014 all while maintaining smooth 60fps performance.',
-    live: 'https://codealpha-portfolio-plum.vercel.app/', github: 'https://github.com/bikilamoroda146-web/CodeAlpha_Portifolio.git'
+    live: 'https://code-alpha-portifolio-mu.vercel.app/', github: 'https://github.com/bikilamoroda146-web/CodeAlpha_Portifolio.git'
   }
 ];
 
