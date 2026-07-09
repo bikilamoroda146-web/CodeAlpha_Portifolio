@@ -23,7 +23,7 @@ const SKILLS_DATA = [
 const PROJECTS_DATA = [
   {
     id: 1, title: 'Image Gallery App', cat: 'frontend', featured: true,
-    img: 'https://picsum.photos/seed/gallery-app-proj/800/500.jpg',
+    img: 'images/galler-logo.jpg',
     desc: 'A fully responsive image gallery with lightbox preview, category filtering, and auto-slideshow functionality.',
     tech: ['HTML5', 'CSS3', 'JavaScript'],
     features: [
@@ -35,11 +35,11 @@ const PROJECTS_DATA = [
       'Keyboard navigation support'
     ],
     challenges: 'The main challenge was implementing smooth filtering animations without layout shifts. Solved by using CSS transitions with absolute positioning during the filter transition, then switching back to flow layout.',
-    live: '#', github: '#'
+    live: 'https://code-alpha-image-gallery-nine-smoky.vercel.app/', github: 'https://github.com/bikilamoroda146-web/CodeAlpha_Image_Gallery.git'
   },
   {
     id: 2, title: 'Audio Music Player', cat: 'frontend', featured: false,
-    img: 'https://picsum.photos/seed/music-player-proj/800/500.jpg',
+    img: 'images/music-logo.jpg',
     desc: 'A feature-rich audio music player with playlist management, progress control, and volume adjustment.',
     tech: ['HTML5', 'CSS3', 'JavaScript', 'Web Audio API'],
     features: [
@@ -51,11 +51,11 @@ const PROJECTS_DATA = [
       'Repeat & shuffle modes'
     ],
     challenges: 'Handling audio events and synchronizing the progress bar with the current playback position required careful use of requestAnimationFrame and timeupdate events for smooth updates.',
-    live: '#', github: '#'
+    live: 'https://code-alpha-music-player1.vercel.app/', github: 'https://github.com/bikilamoroda146-web/CodeAlpha_Music-Player1.git'
   },
   {
     id: 3, title: 'Calculator App', cat: 'tool', featured: false,
-    img: 'https://picsum.photos/seed/calculator-proj/800/500.jpg',
+    img: 'images/calc.jpg',
     desc: 'A clean and functional calculator supporting all basic arithmetic operations with keyboard input.',
     tech: ['HTML5', 'CSS3', 'JavaScript'],
     features: [
@@ -67,7 +67,7 @@ const PROJECTS_DATA = [
       'Error handling for invalid operations'
     ],
     challenges: 'Implementing proper order of operations and handling edge cases like division by zero, chained operations, and decimal precision required building a robust evaluation system.',
-    live: '#', github: '#'
+    live: 'https://bikilamoroda146-web.github.io/CodeAlpha_Calculator/', github: 'https://github.com/bikilamoroda146-web/CodeAlpha_Calculator.git'
   },
   {
     id: 4, title: 'Portfolio Website', cat: 'fullstack', featured: true,
@@ -83,7 +83,7 @@ const PROJECTS_DATA = [
       'Custom cursor & loading screen'
     ],
     challenges: 'Building a complex single-file application with theme switching, particle systems, scroll animations, and a command palette \u2014 all while maintaining smooth 60fps performance.',
-    live: '#', github: '#'
+    live: 'https://codealpha-portfolio-plum.vercel.app/', github: 'https://github.com/bikilamoroda146-web/CodeAlpha_Portifolio.git'
   }
 ];
 
@@ -496,7 +496,19 @@ function animateCounters() {
 
   function render(cat) {
     cat = cat || 'all';
-    var filtered = cat === 'all' ? SKILLS_DATA : SKILLS_DATA.filter(function (s) { return s.cat === cat; });
+    let filtered;
+
+if (cat === "frontend") {
+    filtered = SKILLS_DATA.filter(skill => skill.cat === "frontend");
+} else if (cat === "backend") {
+    filtered = SKILLS_DATA.filter(skill => skill.cat === "backend");
+} else if (cat === "tools") {
+    filtered = SKILLS_DATA.filter(skill => skill.cat === "tools");
+} else if (cat === "soft") {
+    filtered = SKILLS_DATA.filter(skill => skill.cat === "soft");
+} else {
+    filtered = SKILLS_DATA;
+}
     grid.innerHTML = filtered.map(function (s) {
       return '<div class="skill-card" data-cat="' + s.cat + '">' +
         '<div class="skill-card-header">' +
@@ -516,8 +528,7 @@ function animateCounters() {
     }, 100);
   }
 
-  render();
-
+render('frontend');
   document.querySelectorAll('.skill-tab').forEach(function (tab) {
     tab.addEventListener('click', function () {
       document.querySelectorAll('.skill-tab').forEach(function (t) { t.classList.remove('active'); });
